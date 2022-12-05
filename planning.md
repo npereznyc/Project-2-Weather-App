@@ -1,15 +1,18 @@
-- A **description of the project** you'll be building with the objective described in non-technical language:
+## Description of the project:
 We are building a weather app that allows the user to input their location and select the weather details they wish to view (temprature, precipation, wind, etc.). The app will then display the current weather along with the details they desire.
 
 
-- Hand-drawn or digitally created **wireframes** outlining the key views within your app.
+## App Wireframe:
+![wireframe](./assets/Project%202%20Weather%20App%20(1).jpg)
 
 
-- A collection of **user stories representing project MVP**. You may include additional information about post-MVP plans for your application.
-I open the app because I want to check the weather and I see an input field that asks for my location and a submit button. I enter my city and state and click submit. On the screen appears my local weather, including the current temperature, the high and low temperatures for the day, and a visual representation of the week's temperature via a graph. On the right-hand side is a drop-down menu with additional weather details. When I click on percipitation, the menu drops down and I see the rain and/or snow forecast for the day. When I click on wind, I see the wind forecast for the day. When I click on sunrise/sunset, I see the sunrise and sunset times for the day.
+## User Story:
+I open the app because I want to check the weather and I see an input field that asks for my location and a search button. I enter my city and state and click serach. On the left of the screen appears the day and time, my location, my local weather, including the current temperature, and what the temperature feels like. the right of the current weather, at the top of the screen, is a weekly forecast with the high and low temperatures for the next six days. Below that are other weather highlights, including precipitation for the day, the wind conditions, and the sunrise and sunset times.
 
-- A link to the **API** you plan to use and an **example of the data response** you will use.
-https://open-meteo.com/en/docs
+
+## Link to the API we plan to use & example of the data response:
+- API Link: https://open-meteo.com/en/docs
+- Data example:
 {
 "latitude": 40.710335,
 "longitude": -73.99307,
@@ -36,7 +39,12 @@ https://open-meteo.com/en/docs
 }
 
 
-- A **visual of your component hierarchy**. Think of the the critical states of your project and identify the data that each component will need. Optionally, indicate which components need state and which components will receive props.
-
-
-- If you plan on incorporating a component or any other third-party library, include a link in your proposal.
+## Visual of our component hierarchy: 
+![wireframe with components](./assets/Project%202%20Weather%20App%20(components).jpg)
+- Red: App.js, parent component.
+- Blue Sidebar: Input field, Day, Time, City (from API), Temperature (from API), Apparent Temperature (from API). This component needs state.
+- Blue Weekly Forecast: Six-day outlook (from API), high and low temperatures (from API). This component needs state.
+- Blue Today's Highlights: Will render the Precipitation, Wind, and Sunrise/Sunset components.
+- Aqua Precipitation: Precipitation data (from API). This component needs state.
+- Aqua Wind: Wind data (from API). This component needs state.
+- Aqua Sunrise/set: Sunrise/Sunset data (from API). This component needs state.
