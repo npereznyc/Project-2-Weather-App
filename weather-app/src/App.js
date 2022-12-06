@@ -1,13 +1,11 @@
 import './App.css';
+import Sidebar from './Components/Sidebar';
 
 function App() {
   return (
     <div className="App">
-<<<<<<<<< Temporary merge branch 1
-=========
-      <h1>Weather App</h1>
-      <h2>By Natalie and Emily</h2>
->>>>>>>>> Temporary merge branch 2
+      <h1>Project 2</h1>
+      <Sidebar />
     </div>
   );
 }
