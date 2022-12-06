@@ -24,15 +24,9 @@ import React, {useState, useEffect} from 'react'
     }
     
     
-    // console.log(tempData.current_weather.weathercode)
     useEffect(()=>{
         getTemp()
     }, [])
-
-    // let code = (temp.current_weather.weathercode)
-    // console.log(code)
-    // console.log({temp.current_weather.weathercode}) 
-
 
 
     return (
