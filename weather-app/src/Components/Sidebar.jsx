@@ -47,7 +47,7 @@ import React, {useState, useEffect} from 'react'
             </div>
             {temp.current_weather.weathercode}
             <div className="Date">Date & Time: {temp.current_weather.time}</div>
-            <div className="CurrentTemperature">Current Temperature: {temp.current_weather.temperature}</div>
+            <div className="CurrentTemperature">Current Temperature: {temp.current_weather.temperature}°F</div>
         </div> : <p>Loading...</p>
     )
 }
