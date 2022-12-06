@@ -1,4 +1,5 @@
 import './App.css';
+// import Precipitation from './Components/Precipitation';
 import Sidebar from './Components/Sidebar';
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <div className="App">
       <h1>Project 2</h1>
       <Sidebar />
+      {/* <Precipitation /> */}
     </div>
   );
 }
