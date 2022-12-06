@@ -42,6 +42,8 @@ import React, {useState, useEffect} from 'react'
             {temp.current_weather.weathercode}
             <div className="Date">Date & Time: {temp.current_weather.time}</div>
             <div className="CurrentTemperature">Current Temperature: {temp.current_weather.temperature}°F</div>
+            <div className="FeelsLike">Feels Like: {temp.hourly.apparent_temperature[0]}°F</div>
+            <div className="MaxAndMinTemp">Max: {temp.daily.temperature_2m_max[0]}°F  Min: {temp.daily.temperature_2m_min[0]}°F</div>
         </div> : <p>Loading...</p>
     )
 }
