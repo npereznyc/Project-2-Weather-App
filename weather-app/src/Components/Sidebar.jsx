@@ -6,20 +6,16 @@
 //api feels like 
 
 import React, {useState, useEffect} from 'react'
+const long = -73.01
+const lat = 40.71
 const Sidebar = () => {
-    const[temp, setTemp] = useState(null)
+const[temp, setTemp] = useState(null)
 
     async function getTemp(){
         try{
-            const response = await fetch (`https://api.open-meteo.com/v1/forecast?latitude=40.71&longitude=-73.01&hourly=temperature_2m,apparent_temperature&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&timezone=auto`)
-            // https://api.open-meteo.com/v1/forecast
-            ?latitude={40.71}
-            &longitude={-73.01}
-            &hourly=temperature_2m,apparent_temperature
-            &temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&timezone=auto
+            const response = await fetch (`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&hourly=temperature_2m,apparent_temperature&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&timezone=auto`)
             const tempData = await response.json()
-            // setTemp(tempData)
-            console.log(tempData)
+            setTemp(tempData)
         }catch(err){
             console.log(err)
         }
@@ -27,14 +23,16 @@ const Sidebar = () => {
     useEffect(()=>{
         getTemp()
     }, [])
-
+console.log(temp)
     return (
+        temp
+        ?
         <div className="Sidebar">
             <div className="Input">Input
             </div>
-            <div className="Date">Date</div>
-            <div className="CurrentTemperature">Current Temperature</div>
-        </div>
+            <div className="Date">{temp.hourly.temperature_2m[0]}</div>
+            <div className="CurrentTemperature">{temp.latitude}</div>
+        </div> : <p>Loading...</p>
     )
 }
 
