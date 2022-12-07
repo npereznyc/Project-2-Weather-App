@@ -56,8 +56,8 @@ function App() {
       </div>
       <Sidebar 
       latitude={formState.latitude}
-      longitude={formState.longitude}/>
-      {/* <Precipitation /> */}
+      longitude={formState.longitude}
+      />
       <Wind />
       <SunriseSunset />
       <WeeklyForecast />
