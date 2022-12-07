@@ -12,6 +12,7 @@ import React, {useState, useEffect} from 'react'
 
     const long = -73.99
     const lat = 40.71
+    
     async function getTemp(){
         try{
             const response = await fetch (`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&hourly=apparent_temperature&daily=temperature_2m_max,temperature_2m_min&current_weather=true&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&timezone=auto`)
@@ -72,7 +73,7 @@ import React, {useState, useEffect} from 'react'
             <div className="Date">Date & Time: {temp.current_weather.time}</div>
             <div className="CurrentTemperature">Current Temperature: {temp.current_weather.temperature}°F</div>
             <div className="FeelsLike">Feels Like: {temp.hourly.apparent_temperature[0]}°F</div>
-            <div className="MaxAndMinTemp">Max: {temp.daily.temperature_2m_max[0]}°F  Min: {temp.daily.temperature_2m_min[0]}°F</div>
+            <div className="MaxAndMinTemp">High: {temp.daily.temperature_2m_max[0]}°F  Low: {temp.daily.temperature_2m_min[0]}°F</div>
         </div> : <p>Loading...</p>
     )
 }
