@@ -9,24 +9,8 @@ import React, {useState, useEffect} from 'react'
 
     const Sidebar = () => {
     const[temp, setTemp] = useState(null)
-    const long = -73.99
-    const lat = 40.71
-    const initialState = {
-        longitude: "",
-        latitude: "",
-      }
-    const [formState, setFormState] = useState(initialState)
-    
-    const handleChange = (e) => {
-        setFormState({ ...formState, [e.target.name]: e.target.value })
-      }
-    
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        console.log(formState.latitude)
-    }
-    console.log(formState.latitude)
-    console.log(formState.longitude)
+    let long = 60
+    let lat = 40.71
 
     async function getTemp(){
         try{
@@ -36,13 +20,13 @@ import React, {useState, useEffect} from 'react'
             // console.log(tempData)
         }catch(err){
             console.log(err)
-        }
-        
-    }
+        }}
+
+    
     
     useEffect(()=>{
         getTemp()
-    }, [])
+    })
 
     let weatherCodeHashmap = new Map([
         [0, "Clear"],
@@ -79,34 +63,13 @@ import React, {useState, useEffect} from 'react'
         temp
         ?
         <div className="Sidebar">
-            <div className="Input">
-                <form onSubmit={handleSubmit}>
-                    <label htmlFor="longitude">Longitude:</label>
-                        <input
-                        id="longitude"
-                        type="number"
-                        name="longitude"
-                        value={formState.longitude}
-                        onChange={handleChange}
-                        />
-                    <label htmlFor="latitude">Latitude:</label>
-                        <input
-                        id="latitude"
-                        type="number"
-                        name="latitude"
-                        value={formState.latitude}
-                        onChange={handleChange}
-                        />
-                    <button type="submit">Submit</button>
-                </form>
-
-            </div>
             {weatherCodeHashmap.get(temp.current_weather.weathercode)}
             <div className="Date">Date & Time: {temp.current_weather.time}</div>
             <div className="CurrentTemperature">Current Temperature: {temp.current_weather.temperature}°F</div>
             <div className="FeelsLike">Feels Like: {temp.hourly.apparent_temperature[0]}°F</div>
             <div className="MaxAndMinTemp">High: {temp.daily.temperature_2m_max[0]}°F  Low: {temp.daily.temperature_2m_min[0]}°F</div>
-        </div> : <p>Loading...</p>
+        </div> 
+        : <p>Loading...</p>
     )
 }
 

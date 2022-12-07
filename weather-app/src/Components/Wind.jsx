@@ -9,7 +9,7 @@ const Wind = () => {
             const response = await fetch (`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&daily=windspeed_10m_max,winddirection_10m_dominant&current_weather=true&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&timezone=auto`)
             const windData = await response.json()
             setWind(windData)
-            console.log(windData)
+            // console.log(windData)
         }catch(err){
             console.log(err)
         }

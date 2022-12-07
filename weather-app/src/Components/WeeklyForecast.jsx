@@ -17,7 +17,7 @@ import React, {useState, useEffect} from 'react'
             const response = await fetch (`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&daily=weathercode,temperature_2m_max,temperature_2m_min&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&timezone=auto`)
             const forecastData = await response.json()
             setForecast(forecastData)
-            console.log(forecastData.daily.weathercode)
+            console.log(forecastData)
         }catch(err){
             console.log(err)
         }
