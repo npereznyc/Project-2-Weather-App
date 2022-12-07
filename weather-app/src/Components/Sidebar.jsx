@@ -9,19 +9,35 @@ import React, {useState, useEffect} from 'react'
 
     const Sidebar = () => {
     const[temp, setTemp] = useState(null)
-
     const long = -73.99
     const lat = 40.71
+    const initialState = {
+        longitude: "",
+        latitude: "",
+      }
+    const [formState, setFormState] = useState(initialState)
     
+    const handleChange = (e) => {
+        setFormState({ ...formState, [e.target.name]: e.target.value })
+      }
+    
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(formState.latitude)
+    }
+    console.log(formState.latitude)
+    console.log(formState.longitude)
+
     async function getTemp(){
         try{
             const response = await fetch (`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&hourly=apparent_temperature&daily=temperature_2m_max,temperature_2m_min&current_weather=true&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&timezone=auto`)
             const tempData = await response.json()
             setTemp(tempData)
-            console.log(tempData)
+            // console.log(tempData)
         }catch(err){
             console.log(err)
         }
+        
     }
     
     useEffect(()=>{
@@ -57,16 +73,32 @@ import React, {useState, useEffect} from 'react'
         [95, "Thunderstorms with Hail"],
         [96, "Thunderstorms with Hail"],
         [99, "Thunderstorms with Hail"],
-    ]);
+    ])
 
     return (
         temp
         ?
         <div className="Sidebar">
             <div className="Input">
-                {/* <input value={formState.longitude} id="longitude" className="longitude" onChange={handleChange}></input>
-                <input value={formState.latitude}id="latitude" className="latitude" onChange={handleChange}></input> */}
-                {/* <button type="submit">Submit</button> */}
+                <form onSubmit={handleSubmit}>
+                    <label htmlFor="longitude">Longitude:</label>
+                        <input
+                        id="longitude"
+                        type="number"
+                        name="longitude"
+                        value={formState.longitude}
+                        onChange={handleChange}
+                        />
+                    <label htmlFor="latitude">Latitude:</label>
+                        <input
+                        id="latitude"
+                        type="number"
+                        name="latitude"
+                        value={formState.latitude}
+                        onChange={handleChange}
+                        />
+                    <button type="submit">Submit</button>
+                </form>
 
             </div>
             {weatherCodeHashmap.get(temp.current_weather.weathercode)}
