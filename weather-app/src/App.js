@@ -7,33 +7,46 @@ import WeeklyForecast from './Components/WeeklyForecast';
 import {useState} from 'react'
 
 function App() {
-  const initialState = {
-    longitude: "",
-    latitude: "",
-  }
-  const [formState, setFormState] = useState(initialState)
+  // const initialState = {
+  //   longitude: null,
+  //   latitude: null,
+  // }
+  const [lat, setLat] = useState(null)
+  const [long, setLong] = useState(null)
 
-  const handleChange = (e) => {
-    setFormState({ ...formState, [e.target.name]: e.target.value })
-    // console.log(
-    //     e.target.value,
-    //     e.target.name
-    //   )
-  }
+  // const handleChange = (e) => {
+  //   setFormState({ ...formState, [e.target.name]: e.target.value })
+  //   // console.log(
+  //   //     e.target.value,
+  //   //     e.target.name
+  //   //   )
+  // }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // console.log(formState.latitude)
-    // console.log(formState.longitude)
+  // const handleSubmit = (e) => {
+  //   e.preventDefault()
+  // }
+
+  function componentDidMount() {
+    if ("geolocation" in navigator) {
+      console.log("Available");
+    } else {
+      console.log("Not Available");
+    }
+    navigator.geolocation.getCurrentPosition(function(position) {
+      setLatitude(position.coords.latitude)
+      setLongitude(position.coords.longitude)
+      // console.log("Latitude is :", position.coords.latitude);
+      // console.log("Longitude is :", position.coords.longitude);
+    });
   }
-  console.log("The longitude is " + formState.longitude)
-  console.log("The latitude is " + formState.latitude)
+  componentDidMount()
+// console.log(latitude)
    
   return (
     <div className="App">
       <h1>Project 2</h1>
-      <div className="Input">
-                <form onSubmit={handleSubmit}>
+      <div className="Input-Form">
+                {/* <form onSubmit={handleSubmit}>
                     <label htmlFor="longitude">Longitude:</label>
                         <input
                         id="longitude"
@@ -51,16 +64,16 @@ function App() {
                         onChange={handleChange}
                         />
                     <button type="submit">Submit</button>
-                </form>
+                </form> */}
 
       </div>
       <Sidebar 
-      latitude={formState.latitude}
-      longitude={formState.longitude}
+        lat={latitude}
+        long={longitude}
       />
-      <Wind />
-      <SunriseSunset />
-      <WeeklyForecast />
+      {/* <Wind /> */}
+      {/* <SunriseSunset /> */}
+      {/* <WeeklyForecast /> */}
 
     </div>
   );
