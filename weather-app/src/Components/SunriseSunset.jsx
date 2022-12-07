@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 
-const SunriseSunset = () => {
+const SunriseSunset = (props) => {
 
     const[sun, setSun] = useState(null)
     const long = -87.65
