@@ -76,12 +76,24 @@ import React, {useState, useEffect} from 'react'
                     <div className="code" key={index}>
                         {weatherCodeHashmap.get(dailyCode)}
                     </div>
-                    
                 )
                 })}
+   
+           {/* <div>
+           {forecast.daily.time.map(dailyTime => {
+            forecast.daily.weathercode.map(dailyCode => (
+                return (
+                <div>
+                <p>{dailyTime} {weatherCodeHashmap.get(dailyCode)}</p>
                 
+                </div>
+                )))
+            })}
+            </div> */}
         </section> 
         : <p>Loading...</p>
+
+        
     )
 }
 
