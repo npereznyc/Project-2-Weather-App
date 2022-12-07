@@ -4,6 +4,7 @@ import Sidebar from './Components/Sidebar';
 import SunriseSunset from './Components/SunriseSunset';
 import Wind from './Components/Wind';
 import WeeklyForecast from './Components/WeeklyForecast';
+import {useState} from 'react'
 
 function App() {
   const initialState = {
@@ -14,18 +15,20 @@ function App() {
 
   const handleChange = (e) => {
     setFormState({ ...formState, [e.target.name]: e.target.value })
-    console.log(
-        e.target.value,
-        e.target.name
-      )
+    // console.log(
+    //     e.target.value,
+    //     e.target.name
+    //   )
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(formState.latitude)
-    console.log(formState.longitude)
+    // console.log(formState.latitude)
+    // console.log(formState.longitude)
   }
-
+  console.log("The longitude is " + formState.longitude)
+  console.log("The latitude is " + formState.latitude)
+   
   return (
     <div className="App">
       <h1>Project 2</h1>
@@ -51,7 +54,9 @@ function App() {
                 </form>
 
       </div>
-      <Sidebar />
+      <Sidebar 
+      latitude={formState.latitude}
+      longitude={formState.longitude}/>
       {/* <Precipitation /> */}
       <Wind />
       <SunriseSunset />

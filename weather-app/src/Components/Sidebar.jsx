@@ -7,14 +7,14 @@
 
 import React, {useState, useEffect} from 'react'
 
-    const Sidebar = () => {
+    const Sidebar = (props) => {
     const[temp, setTemp] = useState(null)
     let long = 60
     let lat = 40.71
 
-    async function getTemp(){
+    async function getTemp(props){
         try{
-            const response = await fetch (`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&hourly=apparent_temperature&daily=temperature_2m_max,temperature_2m_min&current_weather=true&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&timezone=auto`)
+            const response = await fetch (`https://api.open-meteo.com/v1/forecast?latitude=${props.latitude}&longitude=${props.longitude}&hourly=apparent_temperature&daily=temperature_2m_max,temperature_2m_min&current_weather=true&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&timezone=auto`)
             const tempData = await response.json()
             setTemp(tempData)
             // console.log(tempData)
