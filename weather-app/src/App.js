@@ -3,6 +3,7 @@ import './App.css';
 import Sidebar from './Components/Sidebar';
 import SunriseSunset from './Components/SunriseSunset';
 import Wind from './Components/Wind';
+import WeeklyForecast from './Components/WeeklyForecast';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       {/* <Precipitation /> */}
       <Wind />
       <SunriseSunset />
+      <WeeklyForecast />
     </div>
   );
 }
