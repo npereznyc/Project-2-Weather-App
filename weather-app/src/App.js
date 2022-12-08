@@ -23,11 +23,13 @@ function App() {
         setLong(position.coords.longitude)
         console.log("Latitude is :", position.coords.latitude)
         console.log("Longitude is :", position.coords.longitude)
+
       })
     }
     async function getData() {
+      const url=`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,rain_sum,windspeed_10m_max,winddirection_10m_dominant&current_weather=true&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&timezone=auto`
       try{
-        const response = await fetch (`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,rain_sum,windspeed_10m_max,winddirection_10m_dominant&current_weather=true&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&timezone=auto`)
+        const response = await fetch (url)
         const data = await response.json()
         setTempData(data)
         console.log(data)//DOES PRINT OUT DATA
@@ -39,10 +41,11 @@ function App() {
   useEffect(()=> {
       getLocation()
   }, [])
-  
+
   useEffect(()=> {
     getData()
   }, [lat, long])
+
   // console.log(tempData)//DOES PRINT OUT DATA- at first it works but when we refresh it throws error
   return (
     tempData
@@ -50,9 +53,9 @@ function App() {
     <div className="App">
       {/* <h1>{tempData.current_weather.weathercode}</h1> */}
       <Sidebar weatherData={tempData} />
-      {/* <Wind /> */}
-      {/* <SunriseSunset /> */}
-      {/* <WeeklyForecast /> */}
+      <Wind weatherData={tempData}/>
+      <SunriseSunset weatherData={tempData}/>
+      <WeeklyForecast weatherData={tempData}/>
 
     </div> 
     : <p>Loading...</p>
