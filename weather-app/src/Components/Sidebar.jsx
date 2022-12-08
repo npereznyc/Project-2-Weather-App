@@ -7,32 +7,9 @@
 
 import React, {useState, useEffect} from 'react'
 
-    const Sidebar = (props) => {
-    const[temp, setTemp] = useState(null)
-    const long = 55
-    const lat = 55
-
-    if ((props.longitude !== null) && (props.latitude !== null)){
-        getTemp()
-    }
-
-    async function getTemp(){
-        try{
-            const response = await fetch (`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&hourly=apparent_temperature&daily=temperature_2m_max,temperature_2m_min&current_weather=true&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&timezone=auto`)
-            const tempData = await response.json()
-            setTemp(tempData)
-            // console.log(tempData)
-        }catch(err){
-            console.log(err)
-        }}
-
-        //  console.log(props.latitude)
-   
+    const Sidebar = ({weatherData}) => {
+    // console.log(weatherData)
     
-    // useEffect(()=>{
-    //     getTemp()
-    // })
-
     let weatherCodeHashmap = new Map([
         [0, "Clear"],
         [1, "Partly Cloudy"],
@@ -65,17 +42,17 @@ import React, {useState, useEffect} from 'react'
     ])
 
     return (
-        temp
-        ?
-        <div className="Sidebar">
-            {weatherCodeHashmap.get(temp.current_weather.weathercode)}
-            <div className="Date">Date & Time: {temp.current_weather.time}</div>
-            <div className="CurrentTemperature">Current Temperature: {temp.current_weather.temperature}°F</div>
-            <div className="FeelsLike">Feels Like: {temp.hourly.apparent_temperature[0]}°F</div>
-
-            <div className="MaxAndMinTemp">High: {temp.daily.temperature_2m_max[0]}°F  Low: {temp.daily.temperature_2m_min[0]}°F</div>
-        </div> 
-        : <p>Loading...</p>
+        <div>
+            <div>Test</div>
+            <div className="Sidebar">
+                {weatherCodeHashmap.get(weatherData.current_weather.weathercode)}
+                <div className="Date">Date & Time: {weatherData.current_weather.time}</div>
+                <div className="CurrentTemperature">Current Temperature: {weatherData.current_weather.temperature}°F</div>
+                <div className="FeelsLike">Feels Like: {weatherData.hourly.apparent_temperature[0]}°F</div>
+                <div className="MaxAndMinTemp">High: {weatherData.daily.temperature_2m_max[0]}°F  Low: {weatherData.daily.temperature_2m_min[0]}°F</div>
+            </div> 
+        </div>
+       
     )
 }
 

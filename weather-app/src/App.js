@@ -4,65 +4,55 @@ import Sidebar from './Components/Sidebar';
 import SunriseSunset from './Components/SunriseSunset';
 import Wind from './Components/Wind';
 import WeeklyForecast from './Components/WeeklyForecast';
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 
 function App() {
-  const initialState = {
-    longitude: "",
-    latitude: "",
-  }
-  const [formState, setFormState] = useState(initialState)
+  const [lat, setLat] = useState([])
+  const [long, setLong] = useState([])
+  const[tempData, setTempData] = useState([])
 
-  const handleChange = (e) => {
-    setFormState({ ...formState, [e.target.name]: e.target.value })
-    // console.log(
-    //     e.target.value,
-    //     e.target.name
-    //   )
+  // if ("geolocation" in navigator) {
+  //   console.log("Available");
+  // } else {
+  //   console.log("Not Available");
+  // }
+  async function getLocation() {
+    
+    navigator.geolocation.getCurrentPosition(function(position) {
+      setLat(position.coords.latitude)
+      setLong(position.coords.longitude)
+      console.log("Latitude is :", position.coords.latitude);
+      console.log("Longitude is :", position.coords.longitude);
+    });
+    try{
+      const response = await fetch (`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}1&hourly=apparent_temperature&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,rain_sum,windspeed_10m_max,winddirection_10m_dominant&current_weather=true&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&timezone=auto`)
+      const data = await response.json()
+      setTempData(data)
+      console.log(data)
+    }catch(err){
+      console.log(err)
+    }
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // console.log(formState.latitude)
-    // console.log(formState.longitude)
-  }
-  console.log("The longitude is " + formState.longitude)
-  console.log("The latitude is " + formState.latitude)
+  useEffect(()=> {
+    getLocation()
+  }, [lat, long])
+
    
   return (
+    tempData
+    ?
     <div className="App">
-      <h1>Project 2</h1>
-      <div className="Input">
-                <form onSubmit={handleSubmit}>
-                    <label htmlFor="longitude">Longitude:</label>
-                        <input
-                        id="longitude"
-                        type="number"
-                        name="longitude"
-                        value={formState.longitude}
-                        onChange={handleChange}
-                        />
-                    <label htmlFor="latitude">Latitude:</label>
-                        <input
-                        id="latitude"
-                        type="number"
-                        name="latitude"
-                        value={formState.latitude}
-                        onChange={handleChange}
-                        />
-                    <button type="submit">Submit</button>
-                </form>
+      {/* <h1>{tempData.current_weather.weathercode}</h1> */}
+      {/* <Sidebar 
+       weatherData={tempData}
+      /> */}
+      {/* <Wind /> */}
+      {/* <SunriseSunset /> */}
+      {/* <WeeklyForecast /> */}
 
-      </div>
-      <Sidebar 
-      latitude={formState.latitude}
-      longitude={formState.longitude}
-      />
-      <Wind />
-      <SunriseSunset />
-      <WeeklyForecast />
-
-    </div>
+    </div> 
+    : <p>Loading...</p>
   );
 }
 
