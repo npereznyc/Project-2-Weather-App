@@ -36,7 +36,7 @@ function App() {
 
   useEffect(()=> {
     getLocation()
-  }, [lat, long])
+  }, [parseFloat(lat), parseFloat(long)])
 
    
   return (
