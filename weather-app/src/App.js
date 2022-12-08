@@ -8,22 +8,22 @@ import {useEffect, useState} from 'react'
 
 function App() {
   getLocation()
-  const [lat, setLat] = useState([])
-  const [long, setLong] = useState([])
+  const [lat, setLat] = useState(null)
+  const [long, setLong] = useState(null)
   const[tempData, setTempData] = useState([])
 
-  // if ("geolocation" in navigator) {
-  //   console.log("Available");
-  // } else {
-  //   console.log("Not Available");
-  // }
-    function getLocation(){
+ 
+  function getLocation(){
+    if ("geolocation" in navigator) {
+      console.log("Available");
+      } else {
+      console.log("Not Available");
+      }
       navigator.geolocation.getCurrentPosition(function(position) {
         setLat(position.coords.latitude)
         setLong(position.coords.longitude)
         console.log("Latitude is :", position.coords.latitude)
         console.log("Longitude is :", position.coords.longitude)
-
       })
     }
     async function getData() {
@@ -43,7 +43,9 @@ function App() {
   }, [])
 
   useEffect(()=> {
-    getData()
+    if(lat && long) {
+      getData()
+    }
   }, [lat, long])
 
   return (
