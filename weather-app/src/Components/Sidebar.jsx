@@ -37,14 +37,13 @@ const Sidebar = ({weatherData}) => {
     }
     if(weatherData){
         return (
-                <div>
-                    <h1>Current Temperature: {weatherData?.current_weather?.temperature}</h1>
-                        <div className="Sidebar">
-                        {weatherCodeHashmap.get(weatherData?.current_weather?.weathercode)}
-                        <div className="Date">Date & Time: {weatherData?.current_weather?.time}</div>
-                        <div className="CurrentTemperature">Current Temperature: {weatherData?.current_weather?.temperature}°F</div>
-                        {/* <div className="FeelsLike">Feels Like: {weatherData?.hourly?.apparent_temperature[0]}°F</div> */}
-                        <div className="MaxAndMinTemp">High: {weatherData?.daily?.temperature_2m_max[0]}°F  Low: {weatherData?.daily?.temperature_2m_min[0]}°F</div>
+            <div>
+                <div className="Sidebar">
+                    <div className="Date">Date & Time: {weatherData?.current_weather?.time}</div>
+                    <div className="Condition">{weatherCodeHashmap.get(weatherData?.current_weather?.weathercode)}</div>
+                    <div className="CurrentTemperature">Current Temperature: {weatherData?.current_weather?.temperature}°F</div>
+                    <div className="FeelsLike">Feels Like: {weatherData?.hourly?.apparent_temperature[0]}°F</div>
+                    <div className="MaxAndMinTemp">High: {weatherData?.daily?.temperature_2m_max[0]}°F  Low: {weatherData?.daily?.temperature_2m_min[0]}°F</div>
                     </div> 
                 </div>
             

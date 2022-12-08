@@ -5,7 +5,7 @@ const Wind = ({weatherData}) => {
 
 if(weatherData){
   return (
-    <div>
+    <div className="Wind">
         <div>
             Wind: {windHashmap.get(weatherData?.current_weather?.winddirection)} at {weatherData?.current_weather?.windspeed}mph
         </div>

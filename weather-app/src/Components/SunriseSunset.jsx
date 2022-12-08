@@ -9,8 +9,8 @@ const SunriseSunset = ({weatherData}) => {
     return (
         <div className="Sun">
                 <div onMouseEnter={toggle} onMouseLeave={toggle} className="toggle">
-                    {state ? <h1>Sunset: {weatherData?.daily?.sunset[0]}</h1> : 
-                    <h1>Sunrise: {weatherData?.daily?.sunrise[0]}</h1>}
+                    {state ? <h3 className="Sunset">Sunset: {weatherData?.daily?.sunset[0]}</h3> : 
+                    <h3 className="Sunrise">Sunrise: {weatherData?.daily?.sunrise[0]}</h3>}
                 </div>
 
 
