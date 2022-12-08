@@ -37,8 +37,8 @@ const Sidebar = ({weatherData}) => {
     }
     if(weatherData){
         return (
-            <div>
-                <div className="Sidebar">
+            <div className="Sidebar">
+                <div>
                     <div className="Date">Date & Time: {weatherData?.current_weather?.time}</div>
                     <div className="Condition">{weatherCodeHashmap.get(weatherData?.current_weather?.weathercode)}</div>
                     <div className="CurrentTemperature">Current Temperature: {weatherData?.current_weather?.temperature}°F</div>

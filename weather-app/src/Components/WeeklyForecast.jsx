@@ -33,6 +33,7 @@ const WeeklyForecast = ({weatherData}) => {
     if(weatherData){
         return (
             <div className="ForecastContainer">
+                <div className="ForecastHeader"><h2>Weekly Forecast</h2></div>
                 <div className="day1">
                     {weatherData?.daily?.time[1]}:{'\n'}
                     {weatherCodeHashmap.get(weatherData?.daily?.weathercode[1])}
