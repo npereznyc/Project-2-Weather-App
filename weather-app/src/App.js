@@ -28,7 +28,7 @@ function App() {
       const response = await fetch (`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}1&hourly=apparent_temperature&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,rain_sum,windspeed_10m_max,winddirection_10m_dominant&current_weather=true&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&timezone=auto`)
       const data = await response.json()
       setTempData(data)
-      console.log(data)
+      console.log(data)//DOES PRINT OUT DATA
     }catch(err){
       console.log(err)
     }
@@ -38,7 +38,7 @@ function App() {
     getLocation()
   }, [parseFloat(lat), parseFloat(long)])
 
-   
+  console.log(tempData)//DOES PRINT OUT DATA
   return (
     tempData
     ?
