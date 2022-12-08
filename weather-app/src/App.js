@@ -38,7 +38,7 @@ function App() {
     getLocation()
   }, [parseFloat(lat), parseFloat(long)])
 
-  console.log(tempData)//DOES PRINT OUT DATA
+  console.log(tempData.current_weather.temperature)//DOES PRINT OUT DATA- at first it works but when we refresh it throws error
   return (
     tempData
     ?
