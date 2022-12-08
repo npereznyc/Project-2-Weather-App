@@ -1,32 +1,5 @@
-//header
-//similar to birds cards and how they were generated
-//api for high 
-//api for low 
-//function for day 
-
-import React, {useState, useEffect} from 'react'
-
-    const WeeklyForecast = () => {
-    const[forecast, setForecast] = useState(null)
-
-    const long = -73.99
-    const lat = 40.71
+const WeeklyForecast = ({weatherData}) => {
     
-    async function getForecast(){
-        try{
-            const response = await fetch (`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&daily=weathercode,temperature_2m_max,temperature_2m_min&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&timezone=auto`)
-            const forecastData = await response.json()
-            setForecast(forecastData)
-            console.log(forecastData)
-        }catch(err){
-            console.log(err)
-        }
-    }
-    
-    useEffect(()=>{
-        getForecast()
-    }, [])
-
     let weatherCodeHashmap = new Map([
         [0, "Clear"],
         [1, "Partly Cloudy"],
@@ -56,45 +29,41 @@ import React, {useState, useEffect} from 'react'
         [95, "Thunderstorms with Hail"],
         [96, "Thunderstorms with Hail"],
         [99, "Thunderstorms with Hail"],
-    ]);
-
-    return (
-        forecast
-        ?
-        <section className="container">
-            
-            {forecast.daily.time.map((dailyTime, index)=> {
-                return (
-                    <div className="day" key={index}>
-                        <p>{dailyTime}</p>
-                    </div>
-                )
-            })}
-
-            {forecast.daily.weathercode.map((dailyCode, index)=> {
-                return (
-                    <div className="code" key={index}>
-                        {weatherCodeHashmap.get(dailyCode)}
-                    </div>
-                )
-                })}
-   
-           {/* <div>
-           {forecast.daily.time.map(dailyTime => {
-            forecast.daily.weathercode.map(dailyCode => (
-                return (
-                <div>
-                <p>{dailyTime} {weatherCodeHashmap.get(dailyCode)}</p>
-                
+    ])
+    if(weatherData){
+        return (
+            <div className="ForecastContainer">
+                <div className="day1">
+                    {weatherData?.daily?.time[1]}:{'\n'}
+                    {weatherCodeHashmap.get(weatherData?.daily?.weathercode[1])}
                 </div>
-                )))
-            })}
-            </div> */}
-        </section> 
-        : <p>Loading...</p>
+                <div className="day2">
+                    {weatherData?.daily?.time[2]}:{'\n'}
+                    {weatherCodeHashmap.get(weatherData?.daily?.weathercode[2])}
+                </div>
+                <div className="day3">
+                    {weatherData?.daily?.time[3]}:{'\n'}
+                    {weatherCodeHashmap.get(weatherData?.daily?.weathercode[3])}
+                </div>
+                <div className="day4">
+                    {weatherData?.daily?.time[4]}:{'\n'}
+                    {weatherCodeHashmap.get(weatherData?.daily?.weathercode[4])}
+                </div>
+                <div className="day5">
+                    {weatherData?.daily?.time[5]}:{'\n'}
+                    {weatherCodeHashmap.get(weatherData?.daily?.weathercode[5])}
+                </div>
+                <div className="day6">
+                    {weatherData?.daily?.time[6]}:{'\n'}
+                    {weatherCodeHashmap.get(weatherData?.daily?.weathercode[6])}
+                </div>
 
-        
-    )
+
+
+
+            </div>
+            )
+    }
 }
 
 export default WeeklyForecast

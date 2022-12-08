@@ -1,35 +1,26 @@
-import React, {useEffect, useState} from 'react'
+import {useState} from 'react'
 
-const SunriseSunset = (props) => {
+const SunriseSunset = ({weatherData}) => {
+    const[state, setState] = useState(false)
 
-    const[sun, setSun] = useState(null)
-    const long = -87.65
-    const lat = 41.85
-    async function getSun(){
-        try{
-            const response = await fetch (`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&daily=sunrise,sunset&current_weather=true&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&timezone=auto`)
-            const sunData = await response.json()
-            setSun(sunData)
-            // console.log(sunData)
-        }catch(err){
-            console.log(err)
-        }
+    const toggle=()=>{
+        setState(!state)
     }
-    
-    useEffect(()=>{
-        getSun()
-    }, [])
-  return (
-    sun
-    ?
-    <div>
-        <div>
-            Sunrise: {sun.daily.sunrise[0]}
-        </div>
-        <div>
-            Sunset: {sun.daily.sunset[0]}
-        </div>
-    </div> : <p>Loading...</p>
+    return (
+        <div className="Sun">
+                <div onMouseEnter={toggle} onMouseLeave={toggle} className="toggle">
+                    {state ? <h1>Sunset: {weatherData?.daily?.sunset[0]}</h1> : 
+                    <h1>Sunrise: {weatherData?.daily?.sunrise[0]}</h1>}
+                </div>
+
+
+            {/* <div className="SunriseFront">
+                Sunrise: {weatherData?.daily?.sunrise[0]}
+            </div>
+            <div className="Sunset">
+                Sunset: {weatherData?.daily?.sunset[0]}
+            </div> */}
+        </div> 
   )
 }
 

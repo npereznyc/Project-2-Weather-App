@@ -1,14 +1,4 @@
-//input field 
-//button 
-//date and time 
-//api location from input field
-//api temperature 
-//api feels like 
-
-import React, {useState, useEffect} from 'react'
-
-    const Sidebar = ({weatherData}) => {
-    // console.log(weatherData)
+const Sidebar = ({weatherData}) => {
     
     let weatherCodeHashmap = new Map([
         [0, "Clear"],
@@ -40,20 +30,28 @@ import React, {useState, useEffect} from 'react'
         [96, "Thunderstorms with Hail"],
         [99, "Thunderstorms with Hail"],
     ])
+    if(!weatherData){
+        return (
+            <div>Loading...</div>
+        )
+    }
+    if(weatherData){
+        return (
+                <div>
+                    <h1>Current Temperature: {weatherData?.current_weather?.temperature}</h1>
+                        <div className="Sidebar">
+                        {weatherCodeHashmap.get(weatherData?.current_weather?.weathercode)}
+                        <div className="Date">Date & Time: {weatherData?.current_weather?.time}</div>
+                        <div className="CurrentTemperature">Current Temperature: {weatherData?.current_weather?.temperature}°F</div>
+                        {/* <div className="FeelsLike">Feels Like: {weatherData?.hourly?.apparent_temperature[0]}°F</div> */}
+                        <div className="MaxAndMinTemp">High: {weatherData?.daily?.temperature_2m_max[0]}°F  Low: {weatherData?.daily?.temperature_2m_min[0]}°F</div>
+                    </div> 
+                </div>
+            
+            )
 
-    return (
-        <div>
-            <div>Test</div>
-            <div className="Sidebar">
-                {weatherCodeHashmap.get(weatherData.current_weather.weathercode)}
-                <div className="Date">Date & Time: {weatherData.current_weather.time}</div>
-                <div className="CurrentTemperature">Current Temperature: {weatherData.current_weather.temperature}°F</div>
-                <div className="FeelsLike">Feels Like: {weatherData.hourly.apparent_temperature[0]}°F</div>
-                <div className="MaxAndMinTemp">High: {weatherData.daily.temperature_2m_max[0]}°F  Low: {weatherData.daily.temperature_2m_min[0]}°F</div>
-            </div> 
-        </div>
-       
-    )
+    }
+    
 }
 
 export default Sidebar
