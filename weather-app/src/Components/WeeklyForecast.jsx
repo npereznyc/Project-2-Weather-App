@@ -1,12 +1,4 @@
-//header
-//similar to birds cards and how they were generated
-//api for high 
-//api for low 
-//function for day 
-
-import React, {useState, useEffect} from 'react'
-
-    const WeeklyForecast = ({weatherData}) => {
+const WeeklyForecast = ({weatherData}) => {
     
     let weatherCodeHashmap = new Map([
         [0, "Clear"],
@@ -40,28 +32,28 @@ import React, {useState, useEffect} from 'react'
     ])
     if(weatherData){
         return (
-            <div className="container">
-                <div>
+            <div className="ForecastContainer">
+                <div className="day1">
                     {weatherData?.daily?.time[1]}:{'\n'}
                     {weatherCodeHashmap.get(weatherData?.daily?.weathercode[1])}
                 </div>
-                <div>
+                <div className="day2">
                     {weatherData?.daily?.time[2]}:{'\n'}
                     {weatherCodeHashmap.get(weatherData?.daily?.weathercode[2])}
                 </div>
-                <div>
+                <div className="day3">
                     {weatherData?.daily?.time[3]}:{'\n'}
                     {weatherCodeHashmap.get(weatherData?.daily?.weathercode[3])}
                 </div>
-                <div>
+                <div className="day4">
                     {weatherData?.daily?.time[4]}:{'\n'}
                     {weatherCodeHashmap.get(weatherData?.daily?.weathercode[4])}
                 </div>
-                <div>
+                <div className="day5">
                     {weatherData?.daily?.time[5]}:{'\n'}
                     {weatherCodeHashmap.get(weatherData?.daily?.weathercode[5])}
                 </div>
-                <div>
+                <div className="day6">
                     {weatherData?.daily?.time[6]}:{'\n'}
                     {weatherCodeHashmap.get(weatherData?.daily?.weathercode[6])}
                 </div>

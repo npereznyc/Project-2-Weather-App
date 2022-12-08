@@ -1,14 +1,4 @@
-//input field 
-//button 
-//date and time 
-//api location from input field
-//api temperature 
-//api feels like 
-
-import React, {useState, useEffect} from 'react'
-
-    const Sidebar = ({weatherData}) => {
-    // console.log(weatherData)
+const Sidebar = ({weatherData}) => {
     
     let weatherCodeHashmap = new Map([
         [0, "Clear"],
@@ -40,7 +30,6 @@ import React, {useState, useEffect} from 'react'
         [96, "Thunderstorms with Hail"],
         [99, "Thunderstorms with Hail"],
     ])
-    // console.log(weatherData.current_weather.temperature)
     if(!weatherData){
         return (
             <div>Loading...</div>

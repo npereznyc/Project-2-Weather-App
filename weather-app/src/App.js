@@ -46,12 +46,10 @@ function App() {
     getData()
   }, [lat, long])
 
-  // console.log(tempData)//DOES PRINT OUT DATA- at first it works but when we refresh it throws error
   return (
     tempData
     ?
     <div className="App">
-      {/* <h1>{tempData.current_weather.weathercode}</h1> */}
       <Sidebar weatherData={tempData} />
       <Wind weatherData={tempData}/>
       <SunriseSunset weatherData={tempData}/>
@@ -62,4 +60,7 @@ function App() {
   );
 }
 
-export default App;
+export default App
+
+//format data and time
+
