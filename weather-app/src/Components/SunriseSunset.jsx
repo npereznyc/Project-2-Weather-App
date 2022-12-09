@@ -8,18 +8,18 @@ const SunriseSunset = ({weatherData}) => {
     }
     return (
         <div className="Sun">
-                <div onMouseEnter={toggle} onMouseLeave={toggle} className="toggle">
-                    {state ? <h1>Sunset: {weatherData?.daily?.sunset[0]}</h1> : 
-                    <h1>Sunrise: {weatherData?.daily?.sunrise[0]}</h1>}
+            <div onMouseEnter={toggle} onMouseLeave={toggle} className="toggle">
+                {state ? 
+                <div className="Sunset">
+                    <h2>Sunset</h2> 
+                    <h2>{weatherData?.daily?.sunset[0]}</h2>
+                </div> : 
+                <div className="Sunrise">
+                    <h2>Sunrise: </h2> 
+                    <h2>{weatherData?.daily?.sunrise[0]}</h2>
                 </div>
-
-
-            {/* <div className="SunriseFront">
-                Sunrise: {weatherData?.daily?.sunrise[0]}
+                }
             </div>
-            <div className="Sunset">
-                Sunset: {weatherData?.daily?.sunset[0]}
-            </div> */}
         </div> 
   )
 }
