@@ -5,6 +5,7 @@ import Wind from './Components/Wind';
 import WeeklyForecast from './Components/WeeklyForecast';
 import {useEffect, useState} from 'react'
 import { Routes, Route } from 'react-router-dom'
+import ExtendedCast from './Components/ExtendedCast';
 
 
 
@@ -54,11 +55,10 @@ function App() {
     tempData
     ?
     <div className="App">
-      <Sidebar weatherData={tempData} />
-      <Wind weatherData={tempData}/>
-      <SunriseSunset weatherData={tempData}/>
-      <WeeklyForecast weatherData={tempData}/>
-
+      <Routes>
+        <Route path="/" element={<><Sidebar weatherData={tempData}/> <Wind weatherData={tempData}/> <SunriseSunset weatherData={tempData}/> <WeeklyForecast weatherData={tempData}/></>} />
+        <Route path="/weekly" element= {<ExtendedCast weatherData={tempData}/>} />
+      </Routes>
     </div> 
     : <p>Loading...</p>
   );

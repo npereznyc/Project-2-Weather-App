@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const WeeklyForecast = ({weatherData}) => {
 
 
@@ -34,7 +36,11 @@ const WeeklyForecast = ({weatherData}) => {
     if(weatherData){
         return (
             <div className="ForecastContainer">
-                <div className="ForecastHeader"><h2>Weekly Forecast</h2></div>
+                <Link to={`/weekly`}>
+                    <div className="ForecastHeader">
+                        <h2>Weekly Forecast</h2>
+                    </div>
+                </Link>
                 <div className="day1">
                     <h3>{weatherData?.daily?.time[1]}:<br />
                     {weatherCodeHashmap.get(weatherData?.daily?.weathercode[1])}</h3>
@@ -59,12 +65,8 @@ const WeeklyForecast = ({weatherData}) => {
                     <h3>{weatherData?.daily?.time[6]}:<br />
                     {weatherCodeHashmap.get(weatherData?.daily?.weathercode[6])}</h3>
                 </div>
-
-
-
-
             </div>
-            )
+        )
     }
 }
 

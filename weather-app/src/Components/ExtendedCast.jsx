@@ -30,67 +30,67 @@ const ExtendedCast = ({weatherData}) => {
         [95, "Thunderstorms with Hail"],
         [96, "Thunderstorms with Hail"],
         [99, "Thunderstorms with Hail"],
-    ])}
-    
-    if(!weatherData){
-        return (
-            <div>Loading...</div>
-        )
-    }
+    ])
+
+    // if(!weatherData){
+    //     return (
+    //         <div>Loading...</div>
+    //     )
+    // }
     if(weatherData){
         return (
         <div>
             <div className="Cast0">
-                <div>Date</div>
-                <div>Weathercode</div>
-                <div>Max and Min Temperature</div>
+                <h3>{weatherData?.daily?.time[0]}</h3>
+                <h4>{weatherCodeHashmap.get(weatherData?.daily?.weathercode[0])}</h4>
+                <h4>High: {weatherData?.daily?.temperature_2m_max[0]}°F  Low: {weatherData?.daily?.temperature_2m_min[0]}°F</h4>
                 <div>Sunrise and Sunset</div>
                 <div>Wind?</div>
             </div>
             <div className="Cast1">
-                <div>Date</div>
-                <div>Weathercode</div>
-                <div>Max and Min Temperature</div>
+                <h3>{weatherData?.daily?.time[1]}</h3>
+                <h4>{weatherCodeHashmap.get(weatherData?.daily?.weathercode[1])}</h4>
+                <h2>High: {weatherData?.daily?.temperature_2m_max[1]}°F  Low: {weatherData?.daily?.temperature_2m_min[1]}°F</h2>
                 <div>Sunrise and Sunset</div>
                 <div>Wind?</div>
             </div>
             <div className="Cast2">
-                <div>Date</div>
-                <div>Weathercode</div>
-                <div>Max and Min Temperature</div>
+                <h3>{weatherData?.daily?.time[2]}</h3>
+                <h4>{weatherCodeHashmap.get(weatherData?.daily?.weathercode[2])}</h4>
+                <h2>High: {weatherData?.daily?.temperature_2m_max[2]}°F  Low: {weatherData?.daily?.temperature_2m_min[2]}°F</h2>
                 <div>Sunrise and Sunset</div>
                 <div>Wind?</div>
             </div>
             <div className="Cast3">
-                <div>Date</div>
-                <div>Weathercode</div>
-                <div>Max and Min Temperature</div>
+                <h3>{weatherData?.daily?.time[3]}</h3>
+                <h4>{weatherCodeHashmap.get(weatherData?.daily?.weathercode[3])}</h4>
+                <h2>High: {weatherData?.daily?.temperature_2m_max[3]}°F  Low: {weatherData?.daily?.temperature_2m_min[3]}°F</h2>
                 <div>Sunrise and Sunset</div>
                 <div>Wind?</div>
             </div>
             <div className="Cast4">
-                <div>Date</div>
-                <div>Weathercode</div>
-                <div>Max and Min Temperature</div>
+                <h3>{weatherData?.daily?.time[4]}</h3>
+                <h4>{weatherCodeHashmap.get(weatherData?.daily?.weathercode[4])}</h4>
+                <h2>High: {weatherData?.daily?.temperature_2m_max[4]}°F  Low: {weatherData?.daily?.temperature_2m_min[4]}°F</h2>
                 <div>Sunrise and Sunset</div>
                 <div>Wind?</div>
             </div>
             <div className="Cast5">
-                <div>Date</div>
-                <div>Weathercode</div>
-                <div>Max and Min Temperature</div>
+                <h3>{weatherData?.daily?.time[5]}</h3>
+                <h4>{weatherCodeHashmap.get(weatherData?.daily?.weathercode[5])}</h4>
+                <<h2>High: {weatherData?.daily?.temperature_2m_max[5]}°F  Low: {weatherData?.daily?.temperature_2m_min[5]}°F</h2>
                 <div>Sunrise and Sunset</div>
                 <div>Wind?</div>
             </div>
             <div className="Cast6">
-                <div>Date</div>
-                <div>Weathercode</div>
-                <div>Max and Min Temperature</div>
+            <h3>{weatherData?.daily?.time[6]}</h3>
+                <h4>{weatherCodeHashmap.get(weatherData?.daily?.weathercode[6])}</h4>
+                <h2>High: {weatherData?.daily?.temperature_2m_max[6]}°F  Low: {weatherData?.daily?.temperature_2m_min[6]}°F</h2>
                 <div>Sunrise and Sunset</div>
                 <div>Wind?</div>
             </div>
         </div>
   )
 }
-
+}
 export default ExtendedCast
