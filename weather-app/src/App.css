@@ -3,6 +3,7 @@
 .App {
     display: grid;
     height: 100vh;
+    color: white;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     /* grid-template-columns: repeat(3, 1fr);
@@ -10,7 +11,7 @@
     grid-column-gap: 4px;
     grid-row-gap: 4px;
     padding: 10px;
-    background-image: url("https://cdn.wallpapersafari.com/36/64/QdrBU3.jpg");
+    background-image: url("https://assets.wallpapersin4k.org/uploads/2017/04/Beautiful-Weather-Wallpapers-23.jpg");
     background-size: cover;
     background-position: center;
     font-family: 'Quicksand';
@@ -30,8 +31,10 @@
     margin: 10%;
 }
 .Date{
-    /* color: white;
-    size: 48px */
+    font-size: 75px;
+    display: flex;
+    justify-content: start;
+
 }
 .ForecastContainer { 
     display: grid;
