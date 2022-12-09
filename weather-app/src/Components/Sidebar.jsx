@@ -59,10 +59,12 @@ const Sidebar = ({weatherData}) => {
         return (
             <div className="Sidebar">
                 <div>
-                    <img src={cloudy} alt="cloudy" className="Icon"/>
+                    
                     <div className="Date">
                         <h2>{date}</h2></div>
+
                     <div className="Condition">
+                        <img src={cloudy} alt="cloudy" className="Icon"/>
                         <h2>{weatherCodeHashmap.get(weatherData?.current_weather?.weathercode)}</h2></div>
                     <div className="CurrentTemperature">
                         <h2>Current Temperature: {weatherData?.current_weather?.temperature}°F</h2></div>
