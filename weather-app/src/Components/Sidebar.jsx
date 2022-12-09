@@ -1,5 +1,22 @@
+
 const Sidebar = ({weatherData}) => {
-    
+    let today = new Date()
+    let year = today.getFullYear();
+    let month = today.getMonth() + 1;
+    let day = today.getDate();
+    let hour = today.getHours();
+    let min = today.getMinutes() 
+    let session = "AM"
+        if (hour === 0){
+            hour = 12
+        }
+        if (hour > 12){
+            hour = hour-12
+            session = "PM"
+        }
+    let date = (hour + ":" + min + session)
+
+
     let weatherCodeHashmap = new Map([
         [0, "Clear"],
         [1, "Partly Cloudy"],
@@ -40,7 +57,7 @@ const Sidebar = ({weatherData}) => {
             <div className="Sidebar">
                 <div>
                     <div className="Date">
-                        <h2>Date & Time: {weatherData?.current_weather?.time}</h2></div>
+                        <h2>{date}</h2></div>
                     <div className="Condition">
                         <h2>{weatherCodeHashmap.get(weatherData?.current_weather?.weathercode)}</h2></div>
                     <div className="CurrentTemperature">
