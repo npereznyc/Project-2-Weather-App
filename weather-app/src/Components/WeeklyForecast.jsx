@@ -1,5 +1,6 @@
 const WeeklyForecast = ({weatherData}) => {
-    
+
+
     let weatherCodeHashmap = new Map([
         [0, "Clear"],
         [1, "Partly Cloudy"],
