@@ -5,7 +5,7 @@
     height: 100vh;
     color: white;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: .2fr 1fr 1fr;
     /* grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr); */
     grid-column-gap: 4px;
@@ -16,14 +16,16 @@
     background-position: center;
     font-family: 'Quicksand';
     }
+.Error {
+    grid-area: 1 / 1 / 2 / 4;
+    text-align: center;
+}
     
 .Sidebar { 
     display: grid;
-    grid-row-start: 1;
-    grid-row-end: 3;
+    grid-area: 2 / 1 / 4 / 2;
     place-items: center;
     line-height: 50px;
-    /* grid-area: 1 / 1 / 3 / 2;  */
     background-color: rgb(28, 156, 246, 0.4);
     opacity: 1;
     border-radius: 10px;
@@ -31,9 +33,9 @@
     margin: 10%;
 }
 .Date{
-    font-size: 70px;
+    font-size: 200%;
     display: flex;
-    justify-content: start;
+    justify-content: center;
 
 }
 .Icon{
@@ -41,7 +43,7 @@
 }
 .ForecastContainer { 
     display: grid;
-    grid-area: 1 / 2 / 2 / 5; 
+    grid-area: 2 / 2 / 3 / 4;
     background-color: rgb(255, 250, 224, .4);
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: .2fr repeat(2, 1fr);
@@ -91,7 +93,8 @@
 
 .Wind { 
     display: grid;
-    grid-area: 2 / 2 / 3 / 3; 
+    /* grid-area: 2 / 2 / 3 / 3;  */
+    grid-area: 3 / 2 / 4 / 3;
     place-items: center;
     background-color: rgb(29, 113, 242, .5);
     text-align: center;
@@ -101,7 +104,8 @@
 
 .Sun { 
     display: grid;
-    grid-area: 2 / 3 / 3 / 4; 
+    grid-area: 3 / 3 / 4 / 4;
+    /* grid-area: 2 / 3 / 3 / 4;  */
     margin: 0;
     margin: 10%;
 

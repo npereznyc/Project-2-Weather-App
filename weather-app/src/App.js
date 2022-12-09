@@ -12,12 +12,15 @@ function App() {
   const [lat, setLat] = useState(null)
   const [long, setLong] = useState(null)
   const[tempData, setTempData] = useState([])
+  const [error, setError] = useState(null)
  
   function getLocation(){
     if ("geolocation" in navigator) {
       console.log("Available");
       } else {
-      console.log("Not Available");
+      return (
+        setError("No geolocation available")
+      );
       }
       navigator.geolocation.getCurrentPosition(function(position) {
         setLat(position.coords.latitude)
@@ -34,7 +37,7 @@ function App() {
         setTempData(data)
         console.log(data)
       }catch(err){
-        console.log(err)
+        setError(err)
       }
     }
 
@@ -52,6 +55,7 @@ function App() {
     tempData
     ?
     <div className="App">
+      {error && <h1 className="Error">Could not load your weather data.</h1>}
       <Routes>
         <Route path="/" element={<><Sidebar weatherData={tempData}/> <Wind weatherData={tempData}/> <SunriseSunset weatherData={tempData}/> <WeeklyForecast weatherData={tempData}/></>} />
         <Route path="/weekly" element= {<ExtendedCast weatherData={tempData}/>} />
