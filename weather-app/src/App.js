@@ -7,14 +7,11 @@ import {useEffect, useState} from 'react'
 import { Routes, Route } from 'react-router-dom'
 import ExtendedCast from './Components/ExtendedCast';
 
-
-
 function App() {
   getLocation()
   const [lat, setLat] = useState(null)
   const [long, setLong] = useState(null)
   const[tempData, setTempData] = useState([])
-
  
   function getLocation(){
     if ("geolocation" in navigator) {
@@ -35,7 +32,7 @@ function App() {
         const response = await fetch (url)
         const data = await response.json()
         setTempData(data)
-        console.log(data)//DOES PRINT OUT DATA
+        console.log(data)
       }catch(err){
         console.log(err)
       }

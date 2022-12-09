@@ -124,3 +124,53 @@
     background-color: rgb(147, 112, 216, .5);
     border-radius: 10px;
 }
+
+.ExtendedCast {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 100vh;
+    /* background-image: url("https://assets.wallpapersin4k.org/uploads/2017/04/Beautiful-Weather-Wallpapers-23.jpg"); */
+    background-size: cover;
+    /* background-position: center bottom;
+    bottom: 0;
+    position: fixed; */
+}
+
+.cast1, .cast2, .cast3, .cast4, .cast5, .cast6 {
+    display: grid;
+    background-color: rgb(255, 205, 0, .8);
+    place-items: center;
+    text-align: center;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.cast1 { 
+    grid-area: 1; 
+}
+
+.cast2 { 
+    grid-area: 2; 
+}
+
+.cast3 { 
+    grid-area: 3; 
+}
+
+.cast4{ 
+    grid-area: 4;
+}
+    
+.cast5 { 
+    grid-area: 5; 
+}
+    
+.cast6 { 
+    grid-area: 6; 
+}
+.cast7 { 
+    grid-area: 7; 
+}
