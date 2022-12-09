@@ -12,8 +12,8 @@ const Sidebar = ({weatherData}) => {
             hour = 12
         }
         if (hour > 12){
-            hour = hour-12
             session = "PM"
+            hour = hour-12
         }
         if (min < 10){
             min = "0" + min
