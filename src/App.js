@@ -18,9 +18,9 @@ function App() {
     if ("geolocation" in navigator) {
       console.log("Available");
       } else {
-      return (
-        setError("No geolocation available")
-      );
+        return (
+          setError("No geolocation available")
+        );
       }
       navigator.geolocation.getCurrentPosition(function(position) {
         setLat(position.coords.latitude)
@@ -35,7 +35,6 @@ function App() {
         const response = await fetch (url)
         const data = await response.json()
         setTempData(data)
-        console.log(data)
       }catch(err){
         setError(err)
       }
@@ -66,6 +65,3 @@ function App() {
 }
 
 export default App
-
-//format data and time
-

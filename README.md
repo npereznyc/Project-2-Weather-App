@@ -1,5 +1,3 @@
-# Project-2-Weather-App
-
 - [ ]  **Description:** Describe at a high level what your project is and the motivation for the project (*i.e.*, what problem(s) your projects solves) and includes a **screenshot** of the application in the browser.
 - [ ]  **Technologies Used:** A list of the languages, libraries and frameworks used in your application.
 - [ ]  **Getting Started/Installation Instructions:** This would likely describe how to use the application and the steps to fork, clone and run the application.

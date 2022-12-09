@@ -25,7 +25,7 @@ const SunriseSunset = ({weatherData}) => {
                 }
             </div>
         </div> 
-  )
+    )
 }
 
 export default SunriseSunset

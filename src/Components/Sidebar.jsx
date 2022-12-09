@@ -8,18 +8,18 @@ const Sidebar = ({weatherData}) => {
     let min = today.getMinutes() 
     let dayList = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     let session = "AM"
-        if (hour === 0){
-            hour = 12
-        }
-        if (hour > 12){
-            session = "PM"
-            hour = hour-12
-        }
-        if (min < 10){
-            min = "0" + min
-        }
+    
+    if (hour === 0){
+        hour = 12
+    }
+    if (hour > 12){
+        session = "PM"
+        hour = hour-12
+    }
+    if (min < 10){
+        min = "0" + min
+    }
     let time = (hour + ":" + min + session)
-    // let date = (day
 
     let weatherCodeHashmap = new Map([
         [0, "Clear"],
@@ -51,6 +51,7 @@ const Sidebar = ({weatherData}) => {
         [96, "Thunderstorms with Hail"],
         [99, "Thunderstorms with Hail"],
     ])
+    
     if(!weatherData){
         return (
             <div>Loading...</div>
