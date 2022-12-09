@@ -1,3 +1,4 @@
+import cloudy from './cloudy.png'
 
 const Sidebar = ({weatherData}) => {
     let today = new Date()
@@ -18,7 +19,6 @@ const Sidebar = ({weatherData}) => {
             min = "0" + min
         }
     let date = (hour + ":" + min + session)
-
 
     let weatherCodeHashmap = new Map([
         [0, "Clear"],
@@ -59,6 +59,7 @@ const Sidebar = ({weatherData}) => {
         return (
             <div className="Sidebar">
                 <div>
+                    <img src={cloudy} alt="cloudy" className="Icon"/>
                     <div className="Date">
                         <h2>{date}</h2></div>
                     <div className="Condition">
