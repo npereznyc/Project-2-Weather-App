@@ -6,6 +6,7 @@ import Wind from './Components/Wind';
 import WeeklyForecast from './Components/WeeklyForecast';
 import {useEffect, useState} from 'react'
 
+
 function App() {
   getLocation()
   const [lat, setLat] = useState(null)

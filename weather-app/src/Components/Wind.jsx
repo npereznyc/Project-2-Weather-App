@@ -8,7 +8,7 @@ if(weatherData){
     <div className="Wind">
         <div>
             <h2>Wind:</h2> 
-            <h3>{windHashmap.get(weatherData?.current_weather?.winddirection)} at {weatherData?.current_weather?.windspeed}mph</h3>
+            <h2>{windHashmap.get(weatherData?.current_weather?.winddirection)} at {weatherData?.current_weather?.windspeed}mph</h2>
         </div>
     </div> 
   )
