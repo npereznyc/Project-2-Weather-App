@@ -1,12 +1,12 @@
-import cloudy from './cloudy.png'
-
 const Sidebar = ({weatherData}) => {
     let today = new Date()
     let year = today.getFullYear();
     let month = today.getMonth() + 1;
-    let day = today.getDate();
+    let day = today.getDay();
+    let date = today.getDate();
     let hour = today.getHours();
     let min = today.getMinutes() 
+    let dayList = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     let session = "AM"
         if (hour === 0){
             hour = 12
@@ -18,7 +18,8 @@ const Sidebar = ({weatherData}) => {
         if (min < 10){
             min = "0" + min
         }
-    let date = (hour + ":" + min + session)
+    let time = (hour + ":" + min + session)
+    // let date = (day
 
     let weatherCodeHashmap = new Map([
         [0, "Clear"],
@@ -59,12 +60,13 @@ const Sidebar = ({weatherData}) => {
         return (
             <div className="Sidebar">
                 <div>
-                    
                     <div className="Date">
-                        <h2>{date}</h2></div>
-
+                        <h3>{dayList[day]}</h3>
+                    </div>
+                    <div className="Date">
+                        <h1>{time}</h1>
+                    </div>
                     <div className="Condition">
-                        <img src={cloudy} alt="cloudy" className="Icon"/>
                         <h2>{weatherCodeHashmap.get(weatherData?.current_weather?.weathercode)}</h2></div>
                     <div className="CurrentTemperature">
                         <h2>Current Temperature: {weatherData?.current_weather?.temperature}°F</h2></div>
