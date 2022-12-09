@@ -1,10 +1,11 @@
 import './App.css';
-// import Precipitation from './Components/Precipitation';
 import Sidebar from './Components/Sidebar';
 import SunriseSunset from './Components/SunriseSunset';
 import Wind from './Components/Wind';
 import WeeklyForecast from './Components/WeeklyForecast';
 import {useEffect, useState} from 'react'
+import { Routes, Route } from 'react-router-dom'
+
 
 
 function App() {

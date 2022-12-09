@@ -30,7 +30,8 @@ const ExtendedCast = ({weatherData}) => {
         [95, "Thunderstorms with Hail"],
         [96, "Thunderstorms with Hail"],
         [99, "Thunderstorms with Hail"],
-    ])
+    ])}
+    
     if(!weatherData){
         return (
             <div>Loading...</div>
