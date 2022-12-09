@@ -8,11 +8,11 @@ const Wind = ({weatherData}) => {
 if(weatherData){
   return (
     <div className="Wind">
-        <div>
-            <h2>Wind:</h2> 
-            <img src={wind} alt="windIcon" className='Icon'/>
-            <h2>{windHashmap.get(weatherData?.current_weather?.winddirection)} at {weatherData?.current_weather?.windspeed}mph</h2>
-        </div>
+      <div>
+        <h2>Wind:</h2> 
+          <img src={wind} alt="windIcon" className='Icon'/>
+          <h2>{windHashmap.get(weatherData?.current_weather?.winddirection)} at {weatherData?.current_weather?.windspeed}mph</h2>
+      </div>
     </div> 
   )
 }}
