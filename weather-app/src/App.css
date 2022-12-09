@@ -38,9 +38,6 @@
     justify-content: center;
 
 }
-.Icon{
-    width: 100px;
-}
 .ForecastContainer { 
     display: grid;
     grid-area: 2 / 2 / 3 / 4;

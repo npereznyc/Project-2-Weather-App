@@ -1,5 +1,3 @@
-import cloudy from './cloudy.png'
-
 const Sidebar = ({weatherData}) => {
     let today = new Date()
     let year = today.getFullYear();
@@ -64,7 +62,6 @@ const Sidebar = ({weatherData}) => {
                         <h2>{date}</h2></div>
 
                     <div className="Condition">
-                        <img src={cloudy} alt="cloudy" className="Icon"/>
                         <h2>{weatherCodeHashmap.get(weatherData?.current_weather?.weathercode)}</h2></div>
                     <div className="CurrentTemperature">
                         <h2>Current Temperature: {weatherData?.current_weather?.temperature}°F</h2></div>
