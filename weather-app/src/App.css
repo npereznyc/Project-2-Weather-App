@@ -38,7 +38,8 @@
     font-size: 200%;
     display: flex;
     justify-content: center;
-
+    align-self: flex-start;
+    top: 0;
 }
 .ForecastContainer { 
     display: grid;
@@ -104,7 +105,6 @@
 .Sun { 
     display: grid;
     grid-area: 3 / 3 / 4 / 4;
-    /* grid-area: 2 / 3 / 3 / 4;  */
     margin: 0;
     margin: 10%;
 
@@ -112,7 +112,6 @@
 
 .Sunrise {
     display: grid;
-    /* position: relative; */
     height: 475px;
     place-items: center;
     background-color: rgb(255, 127, 80, .5);
@@ -121,7 +120,6 @@
 
 .Sunset {
     display: grid;
-    /* position: relative; */
     height: 475px;
     place-items: center;
     background-color: rgb(147, 112, 216, .5);
@@ -189,4 +187,10 @@ h3{
 }
 .Cast6 { 
     grid-area:  7 / 1 / 8 / 2; 
+}
+.Homepage{
+    background-color: rgb(255, 205, 0, .8);
+    width: 170px;
+    border-radius: 10px;
+    font-size: 15px;
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import Forecast0 from '../ExtendedComponents/Forecast0'
+import {Link} from 'react-router-dom'
 
 const ExtendedCast = ({weatherData}) => {
     let weatherCodeHashmap = new Map([
@@ -96,7 +96,9 @@ const ExtendedCast = ({weatherData}) => {
                 <h4>Sunset: {weatherData?.daily?.sunset[6]}</h4>
                 <h4>Wind {windHashmap.get(weatherData?.daily?.winddirection_10m_dominant[5])} at {weatherData?.daily?.windspeed_10m_max[5]}mph</h4>
             </div>
-            <h3>Go back to homepage</h3>
+            <Link to={`/`}>
+                <button className="Homepage">Go back to homepage</button>
+            </Link>
         </div>
   )
 }
