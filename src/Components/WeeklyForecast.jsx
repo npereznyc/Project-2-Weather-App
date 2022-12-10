@@ -38,7 +38,7 @@ const WeeklyForecast = ({weatherData}) => {
     if(weatherData){
         return (
             <div className="ForecastContainer">
-                <Link to={`/weekly`}>
+                <Link to={`/weekly`} className="ForecastHeader">
                     <div className="ForecastHeader">
                         <h2>Weekly Forecast</h2>
                     </div>

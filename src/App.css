@@ -6,8 +6,6 @@
     color: white;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: .2fr 1fr 1fr;
-    /* grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr); */
     grid-column-gap: 4px;
     grid-row-gap: 4px;
     padding: 10px;
@@ -51,12 +49,12 @@
     grid-row-gap: 4px;
     border-radius: 10px;
     margin: 3%;
-
 }
 
 .ForecastHeader {
+    display: flex;
     grid-area: 1 / 1 / 2 / 4;
-    text-align: center;
+    justify-content: center;
 }
 
 .day1, .day2, .day3, .day4, .day5, .day6 {
@@ -93,7 +91,6 @@
 
 .Wind { 
     display: grid;
-    /* grid-area: 2 / 2 / 3 / 3;  */
     grid-area: 3 / 2 / 4 / 3;
     place-items: center;
     background-color: rgb(29, 113, 242, .5);
@@ -137,11 +134,7 @@
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     width: 80vw;
-    /* background-image: url("https://assets.wallpapersin4k.org/uploads/2017/04/Beautiful-Weather-Wallpapers-23.jpg"); */
     background-size: cover;
-    /* background-position: center bottom;
-    bottom: 0;
-    position: fixed; */
     align-items: center;
     margin: 30px 120px 0 0;
 }
@@ -187,9 +180,14 @@ h3{
 .Cast6 { 
     grid-area:  7 / 1 / 8 / 2; 
 }
-.Homepage{
-    background-color: rgb(255, 205, 0, .8);
+.HomepageButton{
+    background-color: rgb(255, 205, 0);
     width: 170px;
-    border-radius: 10px;
+    border-radius: 7px;
     font-size: 15px;
+    padding: 7px;
+}
+
+.HomepageButton:hover{
+    background-color: rgb(118, 168, 244);
 }
