@@ -9,18 +9,22 @@ const Sidebar = ({weatherData}) => {
     let dayList = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     let session = "AM"
     
+    //gives common time format not military time
     if (hour === 0){
         hour = 12
     }
+    //defines if AM or PM
     if (hour > 12){
         session = "PM"
         hour = hour-12
     }
+    //minutes have double digits
     if (min < 10){
         min = "0" + min
     }
     let time = (hour + ":" + min + session)
 
+    //defines weathercode 
     let weatherCodeHashmap = new Map([
         [0, "Clear"],
         [1, "Partly Cloudy"],
@@ -52,6 +56,7 @@ const Sidebar = ({weatherData}) => {
         [99, "Thunderstorms with Hail"],
     ])
     
+    //waits for weather data from location 
     if(!weatherData){
         return (
             <div>Loading...</div>
