@@ -20,6 +20,14 @@
     -   Weathercode, which displays weather conditions 
 <br/>
 
+## Screenshots:
+### Homepage
+![Homepage](./assets/Screen%20Shot%20Homepage.png)
+<br/>
+
+### 7-DayForecast
+![7-Da Forecast](./assets/Screen%20Shot%207Day%20Forecast.png)
+
 ## Technologies Used
 - HTML
 - CSS

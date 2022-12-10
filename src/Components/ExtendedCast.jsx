@@ -100,7 +100,7 @@ const ExtendedCast = ({weatherData}) => {
                     <h4>Wind {windHashmap.get(weatherData?.daily?.winddirection_10m_dominant[5])} at {weatherData?.daily?.windspeed_10m_max[5]}mph</h4>
                 </div>
                 <Link to={`/`}>
-                    <button className="Homepage">Go back to homepage</button>
+                    <button className="HomepageButton">Return to Homepage</button>
                 </Link>
             </div>
         )
