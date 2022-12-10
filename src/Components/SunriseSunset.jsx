@@ -5,6 +5,7 @@ import moon from "./half-moon.png"
 const SunriseSunset = ({weatherData}) => {
     const[state, setState] = useState(false)
 
+    //determines what side the user is viewing
     const toggle=()=>{
         setState(!state)
     }
