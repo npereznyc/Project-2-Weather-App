@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
 
 const WeeklyForecast = ({weatherData}) => {
-
+    
+    //defines weathercode   
     let weatherCodeHashmap = new Map([
         [0, "Clear"],
         [1, "Partly Cloudy"],
@@ -33,6 +34,7 @@ const WeeklyForecast = ({weatherData}) => {
         [99, "Thunderstorms with Hail"],
     ])
     
+    //provides wind speed and direction for the next 7 days
     if(weatherData){
         return (
             <div className="ForecastContainer">
