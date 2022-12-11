@@ -1,3 +1,6 @@
+import React from "react";
+import LiveClock from "react-live-clock";
+
 const Sidebar = ({weatherData}) => {
     let today = new Date()
     let year = today.getFullYear();
@@ -5,7 +8,8 @@ const Sidebar = ({weatherData}) => {
     let day = today.getDay();
     let date = today.getDate();
     let hour = today.getHours();
-    let min = today.getMinutes() 
+    let min = today.getMinutes();
+    let second = today.getSeconds(); 
     let dayList = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     let session = "AM"
     
@@ -23,6 +27,10 @@ const Sidebar = ({weatherData}) => {
         min = "0" + min
     }
     let time = (hour + ":" + min + session)
+
+    
+    
+    
 
     //defines weathercode 
     let weatherCodeHashmap = new Map([
@@ -70,7 +78,7 @@ const Sidebar = ({weatherData}) => {
                         <h3>{dayList[day]}</h3>
                     </div>
                     <div className="Date">
-                        <h1>{time}</h1>
+                        <LiveClock className="Date" format={'hh:mma'} ticking={true}/>
                     </div>
                     <div className="Condition">
                         <h2>{weatherCodeHashmap.get(weatherData?.current_weather?.weathercode)}</h2></div>
