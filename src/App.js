@@ -16,7 +16,6 @@ function App() {
  
   function getLocation(){
     if ("geolocation" in navigator) {
-      console.log("Available");
       } else {
         return (
           setError("No geolocation available")
@@ -25,8 +24,6 @@ function App() {
       navigator.geolocation.getCurrentPosition(function(position) {
         setLat(position.coords.latitude)
         setLong(position.coords.longitude)
-        console.log("Latitude is :", position.coords.latitude)
-        console.log("Longitude is :", position.coords.longitude)
       })
     }
     async function getData() {
@@ -40,10 +37,12 @@ function App() {
       }
     }
 
+//getLocation runs upon mounting
   useEffect(()=> {
       getLocation()
   }, [])
 
+  //getData runs upon receiving latitude and longitude
   useEffect(()=> {
     if(lat && long) {
       getData()
