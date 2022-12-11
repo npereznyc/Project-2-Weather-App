@@ -6,8 +6,6 @@
     color: white;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: .2fr 1fr 1fr;
-    /* grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr); */
     grid-column-gap: 4px;
     grid-row-gap: 4px;
     padding: 10px;
@@ -61,7 +59,7 @@
 
 .day1, .day2, .day3, .day4, .day5, .day6 {
     display: grid;
-    background-color: rgb(255, 205, 0, .7);
+    background-color: rgb(255, 205, 0, .8);
     place-items: center;
     text-align: center;
     border-radius: 10px;
