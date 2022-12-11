@@ -34,7 +34,7 @@ const WeeklyForecast = ({weatherData}) => {
         [99, "⛈ Thunderstorms with Hail"],
     ])
     
-    //provides wind speed and direction for the next 7 days
+    //provides wind speed and direction for the next 7 days:
     if(weatherData && weatherData.daily){
         return (
             <div className="ForecastContainer">

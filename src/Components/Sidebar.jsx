@@ -6,7 +6,7 @@ const Sidebar = ({weatherData}) => {
     let dayList = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
  
 
-    //defines weathercode 
+    //defines weathercode:
   let weatherCodeHashmap = new Map([
         [0, "🌤 Clear"], 
         [1, "🌥 Partly Cloudy"],  
@@ -37,8 +37,7 @@ const Sidebar = ({weatherData}) => {
         [96, "⛈ Thunderstorms with Hail"],
         [99, "⛈ Thunderstorms with Hail"],
     ])
-    
-    //waits for weather data from location 
+    //waits for weather data from location:
     if(!weatherData){
         return (
             <div>Loading...</div>
