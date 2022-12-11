@@ -92,7 +92,7 @@
 }
 
 .Weathercode{
-    font-size: 13px;
+    font-size: 24px;
 }
 
 .Wind { 
@@ -300,6 +300,9 @@ h3{
 .Homepage{
     width: 90px;
     font-size: 9px;
+}
+.Weathercode{
+    font-size: 12px;
 }
 
 }
