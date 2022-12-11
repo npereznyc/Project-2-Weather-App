@@ -8,7 +8,7 @@
     grid-template-rows: .2fr 1fr 1fr;
     grid-column-gap: 4px;
     grid-row-gap: 4px;
-    padding: 10px;
+    /* padding: 10px; */
     background-image: url("https://assets.wallpapersin4k.org/uploads/2017/04/Beautiful-Weather-Wallpapers-23.jpg");
     background-size: cover;
     background-position: center;
@@ -31,6 +31,7 @@
     border-radius: 10px;
     text-align: center;
     margin: 10%;
+    height: 80%;
 }
 .Date{
     font-size: 175%;
@@ -97,6 +98,7 @@
     text-align: center;
     border-radius: 10px;
     margin: 10%;
+    height: 65%;
 }
 
 .Sun { 
@@ -104,7 +106,7 @@
     grid-area: 3 / 3 / 4 / 4;
     margin: 0;
     margin: 10%;
-
+    height: 60%;
 }
 
 .Sunrise {
@@ -113,6 +115,7 @@
     place-items: center;
     background-color: rgb(255, 127, 80, .5);
     border-radius: 10px;
+    height: 100%;
 }
 
 .Sunset {
@@ -121,10 +124,12 @@
     place-items: center;
     background-color: rgb(147, 112, 216, .5);
     border-radius: 10px;
+    height: 100%;
 }
 .ForecastTitle{
     text-align: center;
     font-size: 60px;
+    margin: 5px;
 }
 .ExtendedCast {
     grid-area: 2 / 2 / 3 / 4;
@@ -136,7 +141,7 @@
     width: 80vw;
     background-size: cover;
     align-items: center;
-    margin: 30px 120px 0 0;
+    margin-right: 150px;
 }
 
 .Cast1, .Cast2, .Cast3, .Cast4, .Cast5, .Cast6, .Cast0 {
@@ -148,14 +153,15 @@
     display: flex;
     margin: 10px;
     justify-content: space-between;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 0 10px 0 10px;
 }
+
 h3{
     flex-wrap: nowrap;
 }
 .Cast0 { 
     grid-area: 1 / 1 / 2 / 2;
+    margin-top: 0;
 }
 
 .Cast1 { 
@@ -185,7 +191,7 @@ h3{
     width: 170px;
     border-radius: 7px;
     font-size: 15px;
-    padding: 7px;
+    padding: 5px;
 }
 
 .HomepageButton:hover{
