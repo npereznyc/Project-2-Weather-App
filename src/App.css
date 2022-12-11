@@ -194,3 +194,76 @@ h3{
     border-radius: 10px;
     font-size: 15px;
 }
+@media (max-width: 600px){
+h1{
+    font-size: 25px;
+}
+h2{
+    font-size: 15px;
+    width: 
+}
+.App{
+    display: grid;
+    background-size: cover;
+    background-position: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: .2fr 1fr 1fr;
+    grid-column-gap: 4px;
+    grid-row-gap: 4px;
+    padding: 0px;
+}
+.Date{
+    width: 120px;
+}
+.Sidebar{
+    /* height: 600px; */
+    width: 114px;
+    line-height: 25px;
+    height: 520px;
+}
+.ForecastContainer{
+    grid-column-gap: 1px;
+    grid-row-gap: 1px;
+    padding: 7px;
+}
+.TitleOnForecast{
+    font-size: 16px;
+    width: 30px;
+}
+.day1, .day2, .day3, .day4, .day5, .day6 {
+    width: 30px;
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 15px;
+}
+.Wind{
+    height: 200px;
+}
+.WindWords{
+    font-size: 16px;
+}
+.Icon{
+    width: 50px;
+}
+h3{
+    font-size: 12px;
+}
+.Sunrise {
+    display: grid;
+    height: 200px;
+    place-items: center;
+}
+
+.Sunset {
+    display: grid;
+    height: 200px;
+    place-items: center;
+}
+.SunWords{
+    font-size: 16px;
+}
+.SunTime{
+    font-size: 10px;
+}
+
+}

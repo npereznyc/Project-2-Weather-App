@@ -74,7 +74,7 @@ const Sidebar = ({weatherData}) => {
                     <div className="FeelsLike">
                         <h2>Feels Like: {weatherData?.hourly?.apparent_temperature[0]}°F</h2></div>
                     <div className="MaxAndMinTemp">
-                        <h2>High: {weatherData?.daily?.temperature_2m_max[0]}°F  Low: {weatherData?.daily?.temperature_2m_min[0]}°F</h2>
+                        <h2>High: {weatherData?.daily?.temperature_2m_max[0]}°F  <br/>Low: {weatherData?.daily?.temperature_2m_min[0]}°F</h2>
                     </div>
                 </div> 
             </div>
