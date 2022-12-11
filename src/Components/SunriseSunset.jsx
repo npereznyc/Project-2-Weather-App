@@ -5,28 +5,30 @@ import moon from "./half-moon.png"
 const SunriseSunset = ({weatherData}) => {
     const[state, setState] = useState(false)
 
-    //determines what side the user is viewing
+    //determines which side the user is viewing
     const toggle=()=>{
         setState(!state)
     }
-    return (
-        <div className="Sun">
-            <div onMouseEnter={toggle} onMouseLeave={toggle} className="toggle">
-                {state ? 
-                <div className="Sunset">
-                    <h2>Sunset</h2> 
-                    <img src={moon} alt="moonIcon" className='Icon'/>
-                    <h2>{weatherData?.daily?.sunset[0]}</h2>
-                </div> : 
-                <div className="Sunrise">
-                    <h2>Sunrise: </h2> 
-                    <img src={sun} alt="sunIcon" className='Icon'/>
-                    <h2>{weatherData?.daily?.sunrise[0]}</h2>
+    if(weatherData.daily){
+        return (
+            <div className="Sun">
+                <div onMouseEnter={toggle} onMouseLeave={toggle} className="toggle">
+                    {state ? 
+                    <div className="Sunset">
+                        <h2>Sunset</h2> 
+                        <img src={moon} alt="moonIcon" className='Icon'/>
+                        <h2>{weatherData.daily.sunset[0]}</h2>
+                    </div> : 
+                    <div className="Sunrise">
+                        <h2>Sunrise: </h2> 
+                        <img src={sun} alt="sunIcon" className='Icon'/>
+                        <h2>{weatherData.daily.sunrise[0]}</h2>
+                    </div>
+                    }
                 </div>
-                }
-            </div>
-        </div> 
-    )
+            </div> 
+        )
+    }
 }
 
 export default SunriseSunset

@@ -24,10 +24,10 @@ const Sidebar = ({weatherData}) => {
         [66, "🌧 Rain"],
         [66, "🌧 Freezing Rain"],
         [67, "🌧 Freezing Rain"],
-        [71, "❄ Snow"], 
-        [73, "❄ Snow"],
-        [75, "❄ Snow"],
-        [77, "❄ Snow Grain"],
+        [71, "⛄ Snow"], 
+        [73, "⛄ Snow"],
+        [75, "⛄ Snow"],
+        [77, "⛄ Snow Grain"],
         [80, "☔ Rain Showers"],  
         [81, "☔ Rain Showers"], 
         [82, "☔ Rain Showers"],
@@ -65,11 +65,8 @@ const Sidebar = ({weatherData}) => {
                     </div>
                 </div> 
             </div>
-            
         )
-
     }
-    
 }
 
 export default Sidebar
