@@ -90,6 +90,9 @@
     grid-area: 3 / 1 / 4 / 2; 
 }
 
+.Weathercode{
+    font-size: 22px;
+}
 .Wind { 
     display: grid;
     grid-area: 3 / 2 / 4 / 3;
@@ -106,7 +109,7 @@
     grid-area: 3 / 3 / 4 / 4;
     margin: 0;
     margin: 10%;
-    height: 60%;
+    height: 65%;
 }
 
 .Sunrise {
@@ -126,11 +129,13 @@
     border-radius: 10px;
     height: 100%;
 }
+
 .ForecastTitle{
     text-align: center;
     font-size: 60px;
     margin: 5px;
 }
+
 .ExtendedCast {
     grid-area: 2 / 2 / 3 / 4;
     display: grid, flex;
@@ -183,17 +188,128 @@ h3{
 .Cast5 { 
     grid-area: 6 / 1 / 7 / 2;  
 }
+
 .Cast6 { 
     grid-area:  7 / 1 / 8 / 2; 
 }
 .HomepageButton{
     background-color: rgb(255, 205, 0);
     width: 170px;
-    border-radius: 7px;
+    border-radius: 10px;
     font-size: 15px;
     padding: 5px;
 }
 
 .HomepageButton:hover{
     background-color: rgb(118, 168, 244);
+}
+
+@media (max-width: 800px){
+
+h1{
+        font-size: 25px;
+    }
+    
+    h2{
+        font-size: 15px;
+    }
+    
+.App{
+    display: grid;
+    background-size: cover;
+    background-position: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: .2fr 1fr 1fr;
+    grid-column-gap: 4px;
+    grid-row-gap: 4px;
+    padding: 0px;
+}
+
+.Date{
+    width: 120px;
+    font-size: 25px;
+}
+
+.Sidebar{
+    width: 114px;
+    line-height: 25px;
+    height: 520px;
+}
+
+.ForecastContainer{
+    grid-column-gap: 1px;
+    grid-row-gap: 1px;
+    padding: 7px;
+}
+
+.TitleOnForecast{
+    font-size: 16px;
+    width: 30px;
+}
+
+.day1, .day2, .day3, .day4, .day5, .day6 {
+    width: 30px;
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 15px;
+}
+
+.Wind{
+    height: 200px;
+}
+
+.WindWords{
+    font-size: 16px;
+}
+.Icon{
+    width: 50px;
+}
+h3{
+    font-size: 12px;
+}
+.Sunrise {
+    display: grid;
+    height: 200px;
+    place-items: center;
+}
+
+.Sunset {
+    display: grid;
+    height: 200px;
+    place-items: center;
+}
+
+.SunWords{
+    font-size: 16px;
+}
+
+.SunTime{
+    font-size: 10px;
+}
+
+.Cast1, .Cast2, .Cast3, .Cast4, .Cast5, .Cast6, .Cast0 {
+    place-items: center;
+    text-align: center;
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+    width: 330px;
+    height: 60px;
+}
+
+.ForecastTitle{
+    font-size: 30px;
+    width: 375px;
+}
+
+.Homepage{
+    width: 90px;
+    font-size: 9px;
+}
+.Weathercode{
+    font-size: 12px;
+}
 }

@@ -15,14 +15,14 @@ const SunriseSunset = ({weatherData}) => {
                 <div onMouseEnter={toggle} onMouseLeave={toggle} className="toggle">
                     {state ? 
                     <div className="Sunset">
-                        <h2>Sunset</h2> 
+                        <h2 className="SunWords">Sunset</h2> 
                         <img src={moon} alt="moonIcon" className='Icon'/>
-                        <h2>{weatherData.daily.sunset[0]}</h2>
+                        <h2 className="SunTime">{weatherData.daily.sunset[0]}</h2>
                     </div> : 
                     <div className="Sunrise">
-                        <h2>Sunrise: </h2> 
+                        <h2 className="SunWords">Sunrise: </h2> 
                         <img src={sun} alt="sunIcon" className='Icon'/>
-                        <h2>{weatherData.daily.sunrise[0]}</h2>
+                        <h2 className="SunTime">{weatherData.daily.sunrise[0]}</h2>
                     </div>
                     }
                 </div>
