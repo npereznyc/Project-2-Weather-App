@@ -61,6 +61,14 @@ Using our weather app is easy, simply load the deployed page and accept geolocat
 
 <br/>
 
+## Future Features/Improvements:
+
+- Displaying the user's location.
+- Adding the ability for the user to input their location, or a different location so that they can get their weather without enabling geolocation, or get the weather somewhere else.
+- Improving the geolocation/API fetch so that the page loads more instantly with the weather data, rather than after a small lag.
+
+<br/>
+
 ## Bugs? Suggestions? Contributions? 
 Email Emily and Natalie at: 
 <br/>
