@@ -19,13 +19,24 @@
     
 <br/>
 
-## Screenshots:
+## Desktop Screenshots:
 ### Homepage
 ![Homepage](./assets/Screen%20Shot%20Homepage.png)
 <br/>
 
-### 7-DayForecast
+### 7-Day Forecast
 ![7-Day Forecast](./assets/Screen%20Shot%207Day%20Forecast.png)
+
+<br/>
+
+## iPhone Screenshots
+### Homepage
+<img width="373" alt="Screen Shot 2022-12-11 at 9 00 03 PM" src="https://user-images.githubusercontent.com/107048020/206951789-d46fff7f-8b83-429f-a175-f5a046407bfd.png">
+
+<br/>
+
+### 7-Day Forecast
+<img width="375" alt="Screen Shot 2022-12-11 at 9 00 14 PM" src="https://user-images.githubusercontent.com/107048020/206951860-9c9a1524-8e4a-4998-9590-4a927fbe6272.png">
 
 ## Technologies Used
 - HTML
